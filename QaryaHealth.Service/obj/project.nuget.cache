@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZCSVPGM71aPhm4pSC2du4Dm1I8F/n8uj5BVcqKB53VJkpND3pNWAVPnmzFsc9j7Ixk6mSUfFt/ZCgtsEoObCfA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\eslam.heikal\\Desktop\\Home Work\\Bank of blood\\Coding\\QaryaHealth\\QaryaHealth.Service\\QaryaHealth.Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\eslam.heikal\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\eslam.heikal\\.nuget\\packages\\jetbrains.annotations\\2021.1.0\\jetbrains.annotations.2021.1.0.nupkg.sha512",
+    "C:\\Users\\eslam.heikal\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\eslam.heikal\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\eslam.heikal\\.nuget\\packages\\x.pagedlist\\8.1.0\\x.pagedlist.8.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
