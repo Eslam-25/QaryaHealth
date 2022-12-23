@@ -1,0 +1,34 @@
+::ng-deep ion-modal {
+    direction: rtl;
+}
+
+.note-section{
+    text-align: center;
+}
+
+.note{
+    color: var(--ion-color-primary);
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.code-label{
+    color: #6c757d;
+    font-weight: 400;
+    display: block;
+    margin-bottom: .5rem;
+}
+
+p-inputnumber,
+::ng-deep .p-inputnumber{
+    width: 100% !important;
+}
+
+.btn-section {
+    text-align: center;
+}
+
+.btn-section ion-button {
+    width: 50%;
+    font-size: 1.1rem;
+}

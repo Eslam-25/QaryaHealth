@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button side="start"></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title class="title">خدماتي</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" *ngIf="isLoaded">
+    <div class="header-section">
+        <div class="header-section-img">
+            <img class="lab-image" [src]="getImagePath()" [alt]="medicalStaff?.name">
+            <ion-label class="lab-title">
+                <ion-card-title>{{ medicalStaff?.name }}</ion-card-title>
+            </ion-label>
+        </div>
+
+        <form class="form">
+            <ion-card class="service-card">
+
+                <ion-item *ngFor="let service of medicalStaff.services">
+                    <ion-label>
+                        <h2 class="service-title">{{ service?.name }}</h2>
+                        <h6 *ngIf="service?.description" class="service-desc">{{ service?.description }}</h6>
+                        <p class="service-cost"><span>{{ service?.cost }}</span> جنيه</p>
+                    </ion-label>
+
+                    <ion-label slot="end">
+                        <ion-button fill="clear" (click)="onOpenForm(service)">
+                            <ion-icon name="create-outline"></ion-icon>
+                        </ion-button>
+                        <ion-button fill="clear" (click)="onDelete(service?.id)">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </ion-button>
+                    </ion-label>
+                </ion-item>
+                <no-items *ngIf="!medicalStaff.services?.length"></no-items>
+            </ion-card>
+
+            <ion-card class="empty-card"></ion-card>
+
+        </form>
+
+    </div>
+
+</ion-content>
+
+<ion-fab vertical="bottom" *ngIf="isLoaded" horizontal="start">
+    <ion-fab-button (click)="onOpenForm(null)">
+        <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+</ion-fab>

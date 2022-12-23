@@ -1,0 +1,127 @@
+.back-btn {
+    transform: rotate(179deg);
+}
+
+.title {
+    padding-right: 0;
+}
+
+.header-section {
+    background-color: var(--ion-color-primary);
+    border-bottom-right-radius: 40%;
+    padding-top: 1.5rem;
+    height: 20rem;
+}
+
+.header-section-img {
+    text-align: center;
+}
+
+.header-section-img img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    border: 1rem double white;
+}
+
+ion-card-title {
+    color: white;
+}
+
+ion-card {
+    margin-top: 1.5rem;
+    padding-top: .5rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    overflow: initial;
+}
+
+input,
+ion-row,
+textarea,
+::ng-deep .data-calender input,
+::ng-deep .phoneInput input,
+::ng-deep p-dropdown div,
+::ng-deep p-password div,
+::ng-deep p-password div input {
+    width: 100%;
+    text-align: right;
+    font-weight: 500;
+}
+
+textarea{
+    font-weight: 400;
+}
+
+::ng-deep p-chips,
+::ng-deep .p-chips,
+::ng-deep .p-chips .p-chips-multiple-container{
+    width: 100%;
+    text-align: right;
+    font-weight: 500;
+    min-height: 5rem;   
+}
+
+input::placeholder,
+::ng-deep .phoneInput input::placeholder,
+::ng-deep p-password div input::placeholder {
+    font-weight: 400;
+}
+
+ion-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.3rem;
+}
+
+label {
+    left: auto;
+    right: 0.5rem;
+    color: #6c757d;
+    font-weight: 400;
+}
+
+.btn-section {
+    text-align: center;
+    position: absolute;
+    bottom: -1.8rem;
+}
+
+.btn-section ion-button {
+    width: 50%;
+    font-size: 1.1rem;
+}
+
+.date-btn{
+    font-size: 10pt;
+    opacity: 0.8;
+}
+
+.date-label{
+    font-size: medium;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hour-section{
+    margin-top: 0;
+}
+
+.empty-card{
+    box-shadow: none;
+}
+
+.upload-image{
+    /* position: absolute;
+    top: 11.5rem;
+    width: 100%; */
+}
+
+.upload-image button{
+    color: white;
+    font-size: larger;
+    background: var(--ion-color-primary);
+    /* border: 3px solid white; */
+}

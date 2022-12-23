@@ -1,0 +1,141 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title class="title">تعديل</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" *ngIf="isLoaded">
+    <div class="header-section">
+        <div class="header-section-img">
+            <img class="lab-image" src="../../../../../assets/img/male.png">
+            <ion-label class="lab-title">
+                <ion-card-title>تعديل بياناتي</ion-card-title>
+            </ion-label>
+        </div>
+
+        <ion-card>
+            <form class="form" [formGroup]="userForm" (ngSubmit)="onSave()">
+                <ion-grid fixed>
+
+                    <ion-row class="dd-section">
+                        <ion-col size="12" size-md="6" size-lg="4">
+                            <div class="static-label">الاسم*</div>
+                            <input formControlName="name" placeholder="اسلام السيد عبدالمنعم هيكل" type="text"
+                                id="userName" pInputText>
+                            <div
+                                *ngIf="(userFormControls?.name.touched || submitted) && userFormControls?.name.errors?.required">
+                                <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال الاسم
+                                    كاملا</small>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="dd-section">
+                        <ion-col size="12" size-md="6" size-lg="4">
+                            <div class="static-label">العنوان*</div>
+                            <input formControlName="address" placeholder="بدواي - المحطة" type="text" id="address"
+                                pInputText>
+                            <div
+                                *ngIf="(userFormControls.address.touched || submitted) && userFormControls.address.errors?.required">
+                                <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال
+                                    العنوان</small>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="dd-section">
+                        <ion-col size="12" size-md="6" size-lg="4">
+                            <div class="static-label">رقم الهاتف*</div>
+                            <p-inputMask formControlName="phoneNumber" placeholder="0120 000 0000" class="phoneInput"
+                                mask="9999 999 9999" dir="ltr"></p-inputMask>
+                            <div
+                                *ngIf="(userFormControls.phoneNumber.touched || submitted) && userFormControls.phoneNumber.errors?.required">
+                                <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال رقم
+                                    الهاتف</small>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="dd-section">
+                        <ion-col size="12" size-md="6" size-lg="4">
+                            <label class="static-label">حساب جوجل*</label>
+                            <input formControlName="email" placeholder="eslam.example@gmail.com" type="email" id="email"
+                                pInputText 
+                                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                            <div
+                                *ngIf="(userFormControls.email.touched || submitted) && userFormControls.email.errors?.required">
+                                <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال
+                                    ايميل جوجل</small>
+                            </div>
+                            <div
+                                *ngIf="userFormControls.email.errors && userFormControls.email.errors.pattern">
+                                <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال
+                                    ايميل جوجل صحيح</small>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="dd-section">
+                        <ion-col size="12" size-md="6" size-lg="4">
+                            <div class="static-label">الرقم السري*</div>
+                                <p-password minlength="7" required formControlName="password" placeholder="*******"></p-password>
+                            <div *ngIf="(userFormControls.password.touched || submitted) && userFormControls.password.errors?.required">
+                                <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال الرقم السري</small>
+                            </div>
+                            <div *ngIf="userFormControls.password.errors && userFormControls.password.errors.minlength" class = "p-error">
+                                <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال الرقم السري اكثر من 8 احرف</small>
+                              </div>  
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="dd-section">
+                        <ion-col size="12" size-md="6" size-lg="4">
+                            <ion-item>
+                                <ion-button slot="start" class="date-btn" fill="clear" (click)="openDatePicker(0)">*اختر تاريخ الميلاد</ion-button>
+                                <div slot="end" class="date-label">{{ displayDate(userModel.birthDate) }}</div>
+                            </ion-item>
+
+                            <div *ngIf="submitted && !userModel.birthDate">
+                                <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال تاريخ الميلاد</small>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="dd-section">
+                        <ion-col size="12" size-md="6" size-lg="4">
+                            <ion-item>
+                                <ion-button slot="start" class="date-btn" fill="clear" (click)="openDatePicker(1)">اختر تاريخ اخر تبرع</ion-button>
+                                <div slot="end" class="date-label">{{ displayDate(userModel.lastDonationDate) }}</div>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="dd-section">
+                        <ion-col size="12" size-md="6" size-lg="4">
+                            <label class="static-label">فصيلة الدم*</label>
+                            <ion-select formControlName="bloodType" interface="popover" placeholder="اختر فصيلة الدم" pInputText>
+                                <ion-select-option [value]="bloodType.type" *ngFor="let bloodType of bloodTypes;">{{
+                                    bloodType.name }}</ion-select-option>
+                            </ion-select>
+                            <div *ngIf="(userFormControls.bloodType.touched || submitted) && userFormControls.bloodType.errors?.required">
+                                <small class="d-block" id="transportName-help" class="p-error">*يرجي اختيار فصيلة الدم</small>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col class="btn-section" size="12" size-md="6" size-lg="4">
+                            <ion-button type="submit">حفظ</ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </form>
+
+        </ion-card>
+
+    </div>
+</ion-content>

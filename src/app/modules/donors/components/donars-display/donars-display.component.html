@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar>
+
+        <ion-buttons slot="start">
+            <ion-back-button class="back-btn" defaultHref="/home"></ion-back-button>
+        </ion-buttons>
+
+        <ion-title class="title">المتبرعين</ion-title>
+
+        <!-- <ion-buttons slot="end">
+            <ion-button (click)="openFilter()">
+                <ion-icon slot="icon-only" name="options"></ion-icon>
+            </ion-button>
+        </ion-buttons> -->
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" *ngIf="isLoaded">
+    <div class="header-section">
+        <div class="header-section-img">
+        </div>
+
+        <ion-card class="data-card">
+            <ion-row>
+                <ion-col size="12" size-md="6" size-xl="4" *ngFor="let donar of donars">
+                    <donar-card [donar]="donar"></donar-card>
+                </ion-col>
+            </ion-row>
+            
+            <no-items *ngIf="!donars.length"></no-items>
+        </ion-card>
+
+        <ion-card class="empty-card"></ion-card>
+
+    </div>
+
+</ion-content>
+
+<!-- <ion-fab vertical="bottom" horizontal="start">
+    <ion-fab-button routerLink="form">
+        <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+</ion-fab> -->

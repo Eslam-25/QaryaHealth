@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "765519568914",
+    "project_id": "qaryahealth",
+    "storage_bucket": "qaryahealth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765519568914:android:650a1dcc28231dad1ef8cb",
+        "android_client_info": {
+          "package_name": "com.qaryahealth.badaway"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765519568914-gmuosp7ilsmmno7mu3i1pbj8v70q99fp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBg2AOjlUxHx6t3fUBQWz-xDyxy0mRvPhk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "765519568914-gmuosp7ilsmmno7mu3i1pbj8v70q99fp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

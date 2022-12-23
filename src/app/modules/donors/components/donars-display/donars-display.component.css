@@ -1,0 +1,28 @@
+::ng-deep .alert-button-group .alert-button-confirm {
+    margin: 0 auto;
+
+}
+
+.back-btn {
+    transform: rotate(179deg);
+}
+
+.title {
+    padding-right: 0;
+}
+
+.header-section {
+    background-color: var(--ion-color-primary);
+    border-bottom-right-radius: 40%;
+    padding-top: 1.5rem;
+    height: 20rem;
+}
+
+.data-card{
+    min-height: 20rem;
+    box-shadow: none;
+}
+
+.header-section-img {
+    text-align: center;
+}

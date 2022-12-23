@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar>
+
+        <ion-buttons slot="start">
+            <ion-back-button class="back-btn" defaultHref="/home"></ion-back-button>
+        </ion-buttons>
+
+        <ion-title class="title">{{ medicalStaffType.name }}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" *ngIf="isLoaded">
+
+    <div class="header-section">
+        <div class="header-section-img">
+        </div>
+
+        <ion-card class="data-card">
+            <ion-row>
+                <ion-col size="12" size-md="6" size-xl="4" *ngFor="let staff of medicalStuffes">
+                    <staff-card [staff]="staff"></staff-card>
+                </ion-col>
+            </ion-row>
+            <no-items *ngIf="!medicalStuffes.length && isLoaded"></no-items>
+        </ion-card>
+
+        <ion-card class="empty-card"></ion-card>
+        
+    </div>
+</ion-content>
+
+<ion-fab *ngIf="canAddStaff" vertical="bottom" horizontal="start">
+    <ion-fab-button routerLink="form" [queryParams]="{type: medicalStaffType.type, isAdd: true}">
+        <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+</ion-fab>

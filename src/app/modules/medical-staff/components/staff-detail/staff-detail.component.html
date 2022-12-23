@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button class="back-btn" defaultHref="/medical-saff?type={{medicalStaffType?.type}}"></ion-back-button>
+        </ion-buttons>
+
+        <ion-title class="title">خدمات</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="isLoaded">
+    <div class="header-section">
+        <div class="header-section-img">
+            <img class="lab-image" [src]="getImagePath()" [alt]="medicalStaff?.name">
+            <ion-label class="lab-title">
+                <ion-card-title>{{ medicalStaff?.name }}</ion-card-title>
+                <ion-card-subtitle>{{ medicalStaff?.address }}</ion-card-subtitle>
+            </ion-label>
+        </div>
+
+        <ion-card >
+            <ion-label *ngIf="medicalStaff?.bio?.length">
+                <p class="bio">تعرف علي :-</p>
+                <p class="bio-des" >{{ medicalStaff?.bio }}</p>
+            </ion-label>
+
+            <br />
+
+            <ion-label class="call-btn-section">
+                <ion-button class="call-btn" (click)="openContact(medicalStaff)">
+                    كلمني الوقت
+                    <ion-icon slot="end" ios="call-outline" md="call-sharp"></ion-icon>
+                </ion-button>
+            </ion-label>
+        </ion-card>
+    </div>
+
+    <br />
+
+    <ion-item lines="none" *ngIf="medicalStaff?.services?.length">
+        <div class="service-section-title">
+            <p class="">خدمات المعمل : </p>
+        </div>
+    </ion-item>
+
+    <ion-card class="service-card">
+
+        <ion-item *ngFor="let service of medicalStaff?.services">
+            <ion-label>
+                <h2 class="service-title">{{ service?.name }}</h2>
+                <p class="service-cost"><span>{{ service?.cost }}</span> جنيه</p>
+            </ion-label>
+        </ion-item>
+        
+    </ion-card>
+    
+</ion-content>

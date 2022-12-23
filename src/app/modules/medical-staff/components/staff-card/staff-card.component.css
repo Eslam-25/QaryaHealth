@@ -1,0 +1,71 @@
+.staff-card{
+    position: relative;
+    overflow: inherit;
+    margin-top: 3.5rem;
+    padding-top: 1rem;
+}
+
+.card-image{
+    position: absolute;
+    top: -50px;
+    display: flex;
+    left: 0;
+    z-index: 100840000000;
+    justify-content: center;
+    width: 100%;
+}
+
+.card-image img{
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+}
+
+.card-image p{
+    background-color: var(--ion-color-primary-bg);
+    padding: .5rem;
+    border-radius: 10%;
+    color: var(--ion-color-primary);
+    font-weight: 600;
+    font-size: 15pt;
+}
+
+.staff-name {
+    font-weight: 600;
+    font-size: 11pt;
+}
+
+.staff-address{
+    font-weight: 500;
+    font-size: 10pt;
+    padding: .3rem 0;
+    color: gray;
+}
+
+.call-btn{
+    --background: var(--ion-color-primary) !important;
+}
+
+.staff-date-section ion-label{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: .4rem 0;
+}
+
+.staff-date-section h2{
+    margin: 0;
+    padding-bottom: .4rem;
+}
+
+.staff-date-section .title{
+    font-weight: 500;
+}
+
+::ng-deep .call-alert-section .action-sheet-icon{
+    transform: rotate(260deg) !important;
+}
+
+.open-status{
+    color: green;
+}
+

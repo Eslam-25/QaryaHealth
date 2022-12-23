@@ -1,0 +1,31 @@
+::ng-deep ion-modal {
+    direction: rtl;
+}
+
+input,
+p-inputnumber,
+::ng-deep .p-inputnumber{
+    width: 100% !important;
+}
+
+ion-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.3rem;
+}
+
+label {
+    left: auto;
+    right: 0.5rem;
+    color: #6c757d;
+    font-weight: 400;
+}
+
+.btn-section {
+    text-align: center;
+}
+
+.btn-section ion-button {
+    width: 50%;
+    font-size: 1.1rem;
+}

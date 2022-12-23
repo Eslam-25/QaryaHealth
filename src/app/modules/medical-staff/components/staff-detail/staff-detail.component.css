@@ -1,0 +1,93 @@
+.back-btn {
+    transform: rotate(179deg);
+}
+
+.title {
+    padding-right: 0;
+}
+
+.header-section {
+    background-color: var(--ion-color-primary);
+    border-bottom-right-radius: 40%;
+    padding-top: 1.5rem;
+}
+
+.header-section-img {
+    text-align: center;
+}
+
+.header-section-img img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    border: 1rem double white;
+}
+
+.header-section ion-label ion-card-title {
+    color: white;
+}
+
+.header-section ion-label ion-card-subtitle {
+    color: white;
+    opacity: .9;
+}
+
+ion-card-subtitle {
+    margin-top: .5rem;
+}
+
+ion-card {
+    padding-top: .5rem;
+    padding-bottom: 2rem;
+    overflow: initial;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.bio {
+    margin-top: .5rem;
+    font-weight: 500;
+    font-size: medium;
+}
+
+.bio-des {
+    font-weight: 500;
+    padding-right: 4rem;
+    opacity: 0.9;
+}
+
+.call-btn-section {
+    display: flex;
+    justify-content: center;
+}
+
+.call-btn {
+    position: absolute;
+    width: 10rem;
+    bottom: -22px;
+}
+
+.service-section-title {
+    font-weight: bold;
+    font-size: medium;
+    color: var(--ion-color-primary);
+}
+
+.service-card {
+    box-shadow: none;
+    margin-top: -15px;
+}
+
+.service-title,
+.service-cost {
+    font-weight: 600;
+    font-size: medium;
+}
+
+.service-cost span {
+    color: var(--ion-color-primary);
+}
+
+.empty-card{
+    box-shadow: none;
+}

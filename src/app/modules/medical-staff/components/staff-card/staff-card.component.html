@@ -1,0 +1,25 @@
+<ion-card class="staff-card">
+    <div class="card-image">
+        <img [src]="getImagePath(staff)" width="65">
+    </div>
+
+    <ion-item detail="false" lines="" class="speaker-item">
+        <ion-label>
+            <h2 class="staff-name">{{staff.name}}</h2>
+            <h2 class="staff-address">{{staff.address}}</h2>
+        </ion-label>
+    </ion-item>
+
+    <ion-item detail="false" lines="none" class="staff-date-section">
+        <ion-label>
+            <p class="title open-status" *ngIf="staff?.readyToWork">مفتوح</p>
+            <p class="title close-status" *ngIf="!staff?.readyToWork">مغلق</p>
+            <!-- <h4>{{staff.startWorkingTime}} - {{staff.stopWorkingTime}}</h4> -->
+        </ion-label>
+        <ion-label slot="end">
+            <ion-button class="call-btn" (click)="onOpenDetail(staff.id)">
+                خدماتي
+            </ion-button>
+        </ion-label>
+    </ion-item>
+</ion-card>

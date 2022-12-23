@@ -1,0 +1,18 @@
+<ion-card class="types-card">
+    <h5>{{ title }}</h5>
+
+    <ion-row>
+        <ion-col *ngFor="let type of staffTypes;" size="6" size-md="4" size-lg="3">
+            <ion-card class="provider-card" (click)="onTypeClick(type.type)">
+                <div class="img-section">
+                    <img [src]="type.imagePath" />
+                </div>
+                <ion-card-header>
+                    <ion-card-subtitle class="lab-title">{{ type.name }}</ion-card-subtitle>
+                </ion-card-header>
+            </ion-card>
+
+        </ion-col>
+    </ion-row>
+
+</ion-card>

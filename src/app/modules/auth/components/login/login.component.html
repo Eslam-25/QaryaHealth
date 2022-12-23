@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button class="back-btn" defaultHref="/home"></ion-back-button>
+        </ion-buttons>
+
+        <ion-title class="title">دخول</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+    <div class="header-section">
+        <div class="header-section-img">
+            <img class="lab-image" src="../../../../../assets/img/male.png">
+            <ion-label class="lab-title">
+                <ion-card-title>دخول مستخدم</ion-card-title>
+            </ion-label>
+        </div>
+        <ion-card>
+            <form class="form" [formGroup]="loginForm" (ngSubmit)="onSave()" >
+                <ion-grid fixed>
+
+                    <ion-row>
+                        <ion-col size="12" size-md="6" size-lg="4">
+                            <span class="p-float-label">
+                                <p-inputMask formControlName="phoneNumber" class="phoneInput"
+                                mask="9999 999 9999" dir="ltr"></p-inputMask>
+                                <label for="labName">رقم الهاتف</label>
+                            </span>
+                            <div *ngIf="(loginFormControls.phoneNumber.touched || submitted) && loginFormControls.phoneNumber.errors?.required">
+                                <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال رقم الهاتف</small>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col size="12" size-md="6" size-lg="4">
+                            <span class="p-float-label">
+                                <p-password formControlName="password"></p-password>
+                                <label for="labName">الرقم السري</label>
+                            </span>
+                            <div *ngIf="(loginFormControls.password.touched || submitted) && loginFormControls.password.errors?.required">
+                                <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال الرقم السري الجديد</small>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+
+                    <br />
+
+                    <ion-row>
+                        <ion-col class="btn-section" size="12" size-md="6" size-lg="4">
+                            <ion-button type="submit">دخول</ion-button>
+                        </ion-col>
+                    </ion-row>
+
+                </ion-grid>
+            </form>
+
+        </ion-card>
+
+        <ion-card class="have-account-card">
+            <ion-row>
+                <ion-col class="have-account" size="12" size-md="6" size-lg="4">
+                    هل نسيت الرقم السري الخاص بك
+                    <ion-button fill="clear" routerLink="/auth/forget-password">نسيت</ion-button>
+                    ؟
+                </ion-col>
+            </ion-row>
+
+            <ion-row style="margin-top: -25px;">
+                <ion-col class="have-account" size="12" size-md="6" size-lg="4">
+                    لا املك حساب خاص بي
+                    <ion-button fill="clear" routerLink="/auth/register">تسجيل</ion-button>
+                </ion-col>
+            </ion-row>
+
+        </ion-card>
+    </div>
+
+
+</ion-content>

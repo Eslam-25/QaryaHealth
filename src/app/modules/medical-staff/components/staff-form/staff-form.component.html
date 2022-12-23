@@ -1,0 +1,150 @@
+<ion-header>
+    <ion-toolbar>
+
+        <ion-buttons slot="start">
+            <ion-back-button class="back-btn" *ngIf="operationAdd"
+                defaultHref="/medical-saff?type={{medicalStaffType?.type}}"></ion-back-button>
+            <ion-menu-button *ngIf="!operationAdd" side="start"></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title class="title" *ngIf="operationAdd">{{ title }}</ion-title>
+        <ion-title class="title" *ngIf="!operationAdd">صفحتي</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" *ngIf="isLoaded">
+    <div class="header-section">
+        <div class="header-section-img">
+            <img class="lab-image" [src]="getImagePath()">
+            <ion-label class="lab-title">
+                <!-- <ion-card-title> البيانات </ion-card-title> -->
+                <div class="upload-image">
+                    <input type="file" #file placeholder="Choose file" (change)="onUploadImage($event)"
+                        style="display:none;">
+                    <button type="button" class="btn btn-success" (click)="file.click()">
+                        تحميل الصورة<ion-icon name="camera-outline"></ion-icon> </button>
+                </div>
+            </ion-label>
+        </div>
+
+        <ion-card>
+            <form class="form" [formGroup]="staffForm" (ngSubmit)="onSave()">
+                <ion-grid fixed>
+
+                    <ion-row class="dd-section">
+                        <ion-col size="12" size-md="6" size-lg="4">
+                            <span class="p-float-label">
+                                <input type="text" formControlName="name" pInputText>
+                                <label>الاسم *</label>
+                            </span>
+                            <div
+                                *ngIf="(staffFormControls.name.touched || submitted) && staffFormControls.name.errors?.required">
+                                <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال الاسم
+                                </small>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="dd-section">
+                        <ion-col size="12" size-md="6" size-lg="4">
+                            <span class="p-float-label">
+                                <input type="text" formControlName="address" pInputText>
+                                <label>العنوان *</label>
+                            </span>
+                            <div
+                                *ngIf="(staffFormControls.address.touched || submitted) && staffFormControls.address.errors?.required">
+                                <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال العنوان
+                                </small>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="dd-section">
+                        <ion-col size="12" size-md="6" size-lg="4">
+                            <span class="p-float-label">
+                                <p-inputMask formControlName="phoneNumber" class="phoneInput" mask="9999 999 9999"
+                                    dir="ltr"></p-inputMask>
+                                <label>رقم الهاتف *</label>
+                            </span>
+                            <div
+                                *ngIf="(staffFormControls.phoneNumber.touched || submitted) && staffFormControls.phoneNumber.errors?.required">
+                                <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال رقم
+                                    الهاتف</small>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="dd-section">
+                        <ion-col size="12" size-md="6" size-lg="4">
+                            <span class="p-float-label">
+                                <input formControlName="email" type="email" id="email" pInputText
+                                    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                                <label>حساب جوجل*</label>
+                            </span>
+                            <div
+                                *ngIf="(staffFormControls.email.touched || submitted) && staffFormControls.email.errors?.required">
+                                <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال
+                                    ايميلك</small>
+                            </div>
+                            <div *ngIf="staffFormControls.email.errors && staffFormControls.email.errors.pattern">
+                                <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال
+                                    ايميل صحيح : eslam.example@gmail.com</small>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="dd-section">
+                        <ion-col size="12" size-md="6" size-lg="4">
+                            <span class="p-float-label">
+                                <p-password minlength="7" required formControlName="password">
+                                </p-password>
+                                <label>الرقم السري*</label>
+                            </span>
+                            <div
+                                *ngIf="(staffFormControls.password.touched || submitted) && staffFormControls.password.errors?.required">
+                                <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال الرقم
+                                    السري</small>
+                            </div>
+                            <div *ngIf="staffFormControls.password.errors && staffFormControls.password.errors.minlength"
+                                class="p-error">
+                                <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال الرقم السري
+                                    اكثر من 8 احرف</small>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="dd-section">
+                        <ion-col size="12" size-md="6" size-lg="4">
+                            <span class="p-float-label">
+                                <textarea rows="3" formControlName="bio" style="resize: none;"
+                                    pInputTextarea></textarea>
+
+                                <label>وصف عني*</label>
+                            </span>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row class="dd-section">
+                        <ion-col size="12" size-md="6" size-lg="4">
+                            <span class="p-float-label">
+                                <p-chips formControlName="workingDescription" separator=","></p-chips>
+
+                                <label>مواعيد العمل * : السبت (9:00 ص - 5:00 م) , ...</label>
+                            </span>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col class="btn-section" size="12" size-md="6" size-lg="4">
+                            <ion-button type="submit">حفظ</ion-button>
+                        </ion-col>
+                    </ion-row>
+
+                </ion-grid>
+            </form>
+        </ion-card>
+
+        <ion-card class="empty-card"></ion-card>
+
+    </div>
+</ion-content>

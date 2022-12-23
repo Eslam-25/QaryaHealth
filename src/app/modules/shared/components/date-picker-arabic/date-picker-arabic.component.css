@@ -1,0 +1,45 @@
+::ng-deep ion-modal {
+    --height: 65%;
+    /* --width: 46%; */
+    --border-radius: 16px;
+    direction: ltr;
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+ion-modal::part(backdrop) {
+    background: rgba(209, 213, 219);
+    opacity: 1;
+}
+
+ion-modal ion-toolbar {
+    --background: rgb(14 116 144);
+    --color: white;
+}
+
+ion-datetime {
+    margin: 0 auto;
+    margin-top: 1rem
+}
+
+::ng-deep .ion-page {
+    display: initial;
+}
+
+.calender-section {
+    text-align: center;
+}
+
+::ng-deep .calender-section .p-calendar .p-datepicker {
+    width: 100% !important;
+    border: 0;
+    direction: rtl;
+}
+
+::ng-deep .calender-section .p-calendar .p-datepicker .p-datepicker-next-icon,
+::ng-deep .calender-section .p-calendar .p-datepicker .p-datepicker-prev-icon {
+    transform: rotate(180deg);
+}
+
+::ng-deep .p-datepicker table td {
+    padding: 0.13rem !important;
+}

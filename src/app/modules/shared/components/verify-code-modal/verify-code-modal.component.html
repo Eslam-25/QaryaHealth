@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>كود التأكيد</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="onCancel()">الغاء</ion-button>
+          </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <form class="form" [formGroup]="verifyForm" (ngSubmit)="onSave()">
+
+        <div class="note-section">
+            <ion-label class="note">* لقد تم ارسال كود التأكيد الي ايميلك , يرجي كتابته فى الاسفل *</ion-label>
+        </div>
+
+        <br />
+
+        <div>
+            <label class="code-label">كود التأكيد</label>
+            <p-inputNumber formControlName="code" mode="decimal" placeholder="1231" inputId="withoutgrouping"
+                [useGrouping]="false">
+            </p-inputNumber>
+
+            <div *ngIf="(verfiyFormControls.code.touched || submitted) && verfiyFormControls.code.errors?.required">
+                <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال كود التأكيد</small>
+            </div>
+
+            <div *ngIf="(verfiyFormControls.code.touched || submitted) && errVerificationCode">
+                <small class="d-block" id="transportName-help" class="p-error">*كود التأكيد غير صحيح </small>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="btn-section">
+            <ion-button type="submit">تأكيد</ion-button>
+        </div>
+
+    </form>
+</ion-content>

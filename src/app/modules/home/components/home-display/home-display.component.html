@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button side="start"></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title class="title">الرئيسية</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" *ngIf="isLoaded">
+    <div class="header-section">
+        <div class="header-section-img">
+            <ion-label class="lab-title">
+                <ion-card-title class="header-title">مرحبا بك {{ userName }}</ion-card-title>
+            </ion-label>
+        </div>
+        <div dir="ltr">
+            <p-carousel [value]="images" [showNavigators]="false" [numVisible]="1" [numScroll]="1"
+                [autoplayInterval]="3000" [circular]="true">
+                <ng-template let-image pTemplate="itaem">
+                    <div class="image-adv-card">
+                        <img [src]="getImage(image?.imagePath)" />
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </div>
+
+        <ion-card class="types-card">
+            <h5>المتبرعين حسب الفصيلة</h5>
+
+            <ion-row>
+                <ion-col *ngFor="let type of bloodTypes;" size="3" size-md="3" size-lg="2">
+                    <ion-card class="card-bloodType" (click)="onBloodTypeClick(type.type)">
+                        <p>{{ type.name }}</p>
+                        <img src="../../../../../assets/img/blood.png" />
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+
+        </ion-card>
+
+        <br />
+
+        <medical-staff-card title="التمريض" [staffTypes]="nurseTypes"></medical-staff-card>
+        <medical-staff-card title="المعامل الطبية" [staffTypes]="labTypes"></medical-staff-card>
+        <!-- <medical-staff-card title="التخصصات الطبية" [staffTypes]="medicalTypes"></medical-staff-card> -->
+
+        <br />
+        <br />
+    </div>
+</ion-content>

@@ -1,0 +1,27 @@
+.types-card {
+    box-shadow: none !important;
+    text-align: right;
+    margin-top: 0;
+}
+
+.provider-card {
+    margin: 0.2rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.provider-card ion-card-header {
+    background-color: var(--ion-color-primary);
+    text-align: center;
+}
+
+.lab-title {
+    font-size: medium;
+    color: white
+}
+
+.img-section{
+    height: 11rem !important;
+    text-align: center;
+    line-height: 18rem;
+}

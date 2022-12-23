@@ -1,0 +1,60 @@
+.back-btn {
+    transform: rotate(179deg);
+}
+
+.title {
+    padding-right: 0;
+}
+
+.header-section ion-label ion-card-title {
+    color: white;
+}
+
+.header-section {
+    background-color: var(--ion-color-primary);
+    border-bottom-right-radius: 40%;
+    padding-top: 1.5rem;
+    max-height: 23rem;
+}
+
+.header-section-img {
+    text-align: center;
+}
+
+.header-section-img img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    border: 1rem double white;
+}
+
+ion-card {
+    margin-top: 1.5rem;
+    padding-top: .5rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    overflow: initial;
+}
+
+.service-card{
+    min-height: 11rem;
+}
+
+.service-desc{
+    color: gray;
+    margin-bottom: .5rem;
+}
+
+.service-title,
+.service-cost{
+  font-weight: 600;
+  font-size: medium;
+}
+
+.service-cost span{
+  color: var(--ion-color-primary);
+}
+
+.empty-card{
+    box-shadow: none;
+}

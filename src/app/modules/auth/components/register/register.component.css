@@ -1,0 +1,131 @@
+.back-btn {
+    transform: rotate(179deg);
+}
+
+.title {
+    padding-right: 0;
+}
+
+.header-section {
+    background-color: var(--ion-color-primary);
+    border-bottom-right-radius: 40%;
+    padding-top: 1.5rem;
+    height: 20rem;
+    margin-bottom: 45rem;
+}
+
+.header-section-img {
+    text-align: center;
+}
+
+.header-section-img img {
+    width: 8rem;
+    border-radius: 50%;
+    border: 1rem double white;
+}
+
+ion-card-title {
+    color: white;
+}
+
+ion-card {
+    margin-top: 1.5rem;
+    padding-top: .5rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    overflow: initial;
+}
+
+input,
+ion-row,
+::ng-deep .data-calender input,
+::ng-deep .phoneInput input,
+::ng-deep p-dropdown div,
+::ng-deep p-password div,
+::ng-deep p-password div input {
+    width: 100%;
+    text-align: right;
+    font-weight: 500;
+}
+
+input::placeholder,
+::ng-deep .phoneInput input::placeholder,
+::ng-deep p-password div input::placeholder {
+    font-weight: 400;
+}
+
+ion-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.3rem;
+}
+
+label {
+    left: auto;
+    right: 0.5rem;
+    color: #6c757d;
+    font-weight: 400;
+}
+
+.btn-section {
+    text-align: center;
+    position: absolute;
+    bottom: -1.8rem;
+}
+
+.btn-section ion-button {
+    width: 50%;
+    font-size: 1.1rem;
+}
+
+.dd-section {
+    margin-top: 0;
+}
+
+.gender-section {
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.gender-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-left: .3rem;
+}
+
+.static-label {
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: .3rem;
+}
+
+.have-account{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.have-account-card{
+    box-shadow: none;
+}
+
+.have-account-card ion-row{
+    margin-top: .5rem;
+}
+
+.date-btn{
+    font-size: 10pt;
+    opacity: 0.8;
+}
+
+.date-label{
+    font-size: medium;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.empty-card{
+    box-shadow: none;
+}

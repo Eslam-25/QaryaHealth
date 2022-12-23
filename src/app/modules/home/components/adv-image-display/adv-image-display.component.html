@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button side="start"></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title class="title">الاعلانات</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" *ngIf="isLoaded">
+
+    <div class="header-section">
+        <div class="header-section-img"></div>
+
+        <ion-card class="main-section">
+            <ion-row>
+
+                <ion-col *ngFor="let image of images" size="12" size-md="4">
+                    <ion-card>
+                        <img [alt]="image?.imagePath" [src]="getImage(image?.imagePath)" />
+
+                        <ion-button fill="clear" (click)="onDelete(image?.id)">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </ion-button>
+
+                    </ion-card>
+                </ion-col>
+
+            </ion-row>
+
+            <no-items *ngIf="!images?.length"></no-items>
+        </ion-card>
+    </div>
+
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="start">
+    <input type="file" #file placeholder="Choose file" (change)="onUploadImage($event)" style="display:none;">
+    <ion-fab-button (click)="file.click()">
+        <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+</ion-fab>

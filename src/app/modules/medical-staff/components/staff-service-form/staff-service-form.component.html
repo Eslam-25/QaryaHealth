@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>بيانات خدمة</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="onCancel()">الغاء</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+    <form class="form" [formGroup]="serviceForm" (ngSubmit)="onSave()">
+
+        <ion-grid fixed>
+
+            <ion-row>
+                <ion-col size="12">
+                    <span class="p-float-label">
+                        <input type="text" formControlName="name" pInputText>
+                        <label>اسم الخدمة*</label>
+                    </span>
+        
+                    <div *ngIf="(verfiyFormControls.name.touched || submitted) && verfiyFormControls.name.errors?.required">
+                        <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال اسم الخدمة</small>
+                    </div>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col size="12">
+                    <span class="p-float-label">
+                        <p-inputNumber formControlName="cost" inputId="withoutgrouping" [useGrouping]="false">
+                        </p-inputNumber>
+                        <label>سعر الخدمة*</label>
+                    </span>
+        
+                    <div *ngIf="(verfiyFormControls.cost.touched || submitted) && verfiyFormControls.cost.errors?.required">
+                        <small class="d-block" id="transportName-help" class="p-error">*يرجي ادخال سعر الخدمة</small>
+                    </div>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col size="12">
+                    <span class="p-float-label">
+                        <input type="text" formControlName="description" pInputText>
+                        <label>وصف الخدمة*</label>
+                    </span>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+
+        <br />
+
+        <div class="btn-section">
+            <ion-button type="submit">حفظ</ion-button>
+        </div>
+
+    </form>
+</ion-content>
