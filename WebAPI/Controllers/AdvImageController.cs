@@ -9,24 +9,17 @@ namespace WebAPI.Controllers;
 [Route("[controller]")]
 public class AdvImageController : ControllerBase
 {
-    private readonly string ImagePath;
     private readonly IAdvImageService _advImageService;
 
-    public AdvImageController(IAdvImageService advImageService, IConfiguration config)
+    public AdvImageController(IAdvImageService advImageService)
     {
         _advImageService = advImageService;
-        ImagePath = config["appUrl"] + "images/";
     }
 
     [HttpGet]
     public async Task<List<AdvImageDto>> GetAll()
     {
-        var images = await _advImageService.GetListAsync();
-        foreach (var image in images)
-        {
-            image.ImagePath = ImagePath + image.ImagePath; 
-        }
-        return images;
+        return await _advImageService.GetListAsync();
     }
 
     [HttpPost]
